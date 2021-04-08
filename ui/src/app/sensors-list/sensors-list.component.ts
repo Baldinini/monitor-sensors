@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SensorResponseDto } from '../model/sensor-response-dto';
+import { Sensor } from '../model/sensor';
 import { SensorService } from '../service/sensor.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { SensorService } from '../service/sensor.service';
 })
 
 export class SensorsListComponent implements OnInit {
-  sensors: SensorResponseDto[] = [];
+  sensors: Sensor[] = [];
   displayedColumns: string[] = ['name', 'model', 'typeName', 'unitName', 'range', 'location', 'buttons'];
 
   filter = {
@@ -28,7 +28,7 @@ export class SensorsListComponent implements OnInit {
       this.ngOnInit();
     });
   }
-  filterSensor(sensors: SensorResponseDto[]): SensorResponseDto[] {
+  filterSensor(sensors: Sensor[]): Sensor[] {
     return sensors.filter((e) => {
       return e.name.toLowerCase().includes(this.filter.keyword.toLowerCase())
         || e.model.toLowerCase().includes(this.filter.keyword.toLowerCase())

@@ -1,6 +1,7 @@
 package com.example.server.service.impl;
 
 import com.example.server.model.Type;
+import com.example.server.model.TypeName;
 import com.example.server.repository.TypeRepository;
 import com.example.server.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,8 @@ public class TypeServiceImpl implements TypeService {
     }
 
     @Override
-    public Optional<Type> getById(Long id) {
-        return typeRepository.findById(id);
+    public Optional<Type> getByTypeName(String name) {
+
+        return typeRepository.findByTypeName(TypeName.valueOf(name));
     }
 }

@@ -37,7 +37,7 @@
   <ng-container matColumnDef="buttons">
     <mat-header-cell  *matHeaderCellDef> Choose operation </mat-header-cell>
     <mat-cell *matCellDef="let sensor">
-      <button mat-raised-button color="primary" >Edit</button>
+      <button mat-raised-button color="primary" routerLink="edit/{{sensor.id}}">Edit</button>
       <button mat-raised-button color="warn" (click)="delete(sensor.id)">Delete</button>
     </mat-cell>
   </ng-container>

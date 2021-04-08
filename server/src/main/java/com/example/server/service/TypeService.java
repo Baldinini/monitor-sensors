@@ -6,5 +6,5 @@ import com.example.server.model.Type;
 import java.util.Optional;
 
 public interface TypeService {
-    Optional<Type> getById(Long id);
+    Optional<Type> getByTypeName(String name);
 }

@@ -6,5 +6,5 @@ import com.example.server.model.Unit;
 import java.util.Optional;
 
 public interface UnitService {
-    Optional<Unit> getById(Long id);
+    Optional<Unit> getByUnitName(String name);
 }

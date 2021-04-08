@@ -1,6 +1,7 @@
 package com.example.server.service.impl;
 
 import com.example.server.model.Unit;
+import com.example.server.model.UnitName;
 import com.example.server.repository.UnitRepository;
 import com.example.server.service.UnitService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,8 @@ public class UnitServiceImpl implements UnitService {
     }
 
     @Override
-    public Optional<Unit> getById(Long id) {
-        return unitRepository.findById(id);
+    public Optional<Unit> getByUnitName(String name) {
+
+        return unitRepository.findByUnitName(UnitName.valueOf(name));
     }
 }

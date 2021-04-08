@@ -6,8 +6,8 @@ import lombok.Data;
 public class SensorRequestDto {
     private String name;
     private String model;
-    private Long idType;
-    private Long idUnit;
+    private String typeName;
+    private String unitName;
     private String location;
     private String description;
     private Integer rangeFrom;

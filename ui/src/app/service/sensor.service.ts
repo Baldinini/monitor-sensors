@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SensorRequestDto } from '../model/sensor-request-dto';
-import { SensorResponseDto } from '../model/sensor-response-dto';
+import { Sensor } from '../model/sensor';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +11,11 @@ export class SensorService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllSensors(): Observable<SensorResponseDto[]> {
-    return this.httpClient.get<SensorResponseDto[]>(this.baseUrl);
+  getAllSensors(): Observable<Sensor[]> {
+    return this.httpClient.get<Sensor[]>(this.baseUrl);
   }
 
-  createSensor(sensor: SensorRequestDto): Observable<void>{
+  createSensor(sensor: Sensor): Observable<void>{
     return this.httpClient.post<void>(this.baseUrl, sensor);
   }
 
@@ -24,12 +23,12 @@ export class SensorService {
     return this.httpClient.delete<void>(`${(this.baseUrl)}/${id}`);
   }
 
-  updateSensor(id: number, sensor: SensorRequestDto): Observable<void> {
+  updateSensor(id: number, sensor: Sensor): Observable<void> {
     return this.httpClient.put<void>(`${(this.baseUrl)}/${id}`, sensor);
   }
 
-  getSensor(id: number): Observable<SensorResponseDto> {
-    return this.httpClient.get<SensorResponseDto>(`${(this.baseUrl)}/${id}`);
+  getSensor(id: number): Observable<Sensor> {
+    return this.httpClient.get<Sensor>(`${(this.baseUrl)}/${id}`);
   }
 
   getDescription(id: number): Observable<string> {
