@@ -12,14 +12,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateSensorComponent } from './create-sensor/create-sensor.component';
 import { SensorsListComponent } from './sensors-list/sensors-list.component';
-import { EditSensorComponent } from './edit-sensor/edit-sensor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SensorsListComponent,
     CreateSensorComponent,
-    EditSensorComponent,
   ],
   imports: [
     BrowserModule,
